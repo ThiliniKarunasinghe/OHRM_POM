@@ -6,6 +6,7 @@ export class PIMPage{                                                           
     middle_name = ':nth-child(2) > :nth-child(2) > .oxd-input'
     last_name = ':nth-child(3) > :nth-child(2) > .oxd-input'
     click_save = '.oxd-button--secondary'
+    lbl_PIM = '.oxd-topbar-header-breadcrumb > .oxd-text'
 
 
     //Refer the class variables
@@ -29,6 +30,10 @@ export class PIMPage{                                                           
 
     clickSaveButton(){
         cy.get(this.click_save).click()
+    }
+
+    verifyPIM(){
+        cy.get(this.lbl_PIM).should('have.text','PIM')    
     }
 
 

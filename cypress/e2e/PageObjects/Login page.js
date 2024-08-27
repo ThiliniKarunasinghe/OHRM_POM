@@ -3,6 +3,7 @@ export class LoginPage{                                                         
     username_textbox = ':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input'    //These are class varibles
     password_textbox = ':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input'
     login_button = '.oxd-button'
+    lbl_msg = '.oxd-topbar-header-breadcrumb > .oxd-text'
 
     enterUsername(username){
         cy.get(this.username_textbox).type(username)                                   //Refer the class variables
@@ -14,5 +15,9 @@ export class LoginPage{                                                         
 
     clickLogin(){
         cy.get(this.login_button).click()    
+    }
+
+    verifyLogin(){
+        cy.get(this.lbl_msg).should('have.text','Dashboard')    
     }
 }

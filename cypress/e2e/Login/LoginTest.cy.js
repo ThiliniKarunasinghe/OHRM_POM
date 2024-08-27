@@ -10,6 +10,7 @@ import {LoginPage} from "../PageObjects/Login page"               //Import the c
         ln.enterUsername('Admin')
         ln.enterPassword('admin123')
         ln.clickLogin()
+        ln.verifyLogin()
     })
 
 
