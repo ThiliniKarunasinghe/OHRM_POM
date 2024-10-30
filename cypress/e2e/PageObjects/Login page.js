@@ -4,6 +4,7 @@ export class LoginPage{                                                         
     password_textbox = ':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input'
     login_button = '.oxd-button'
     lbl_msg = '.oxd-topbar-header-breadcrumb > .oxd-text'
+    incorrectmsg = '.oxd-alert-content > .oxd-text'
 
     enterUsername(username){
         cy.get(this.username_textbox).type(username)                                   //Refer the class variables
@@ -20,4 +21,12 @@ export class LoginPage{                                                         
     verifyLogin(){
         cy.get(this.lbl_msg).should('have.text','Dashboard')    
     }
+
+    verifyInvalivLogin(){
+        cy.get(this.incorrectmsg).should('have.text','Invalid credentials')    
+    }
+
+
+
+    
 }
